@@ -1,14 +1,13 @@
 import React from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-const Header = (prop) => {
-  const { isLoggedIn, onLogin } = prop;
+const Header = () => {
   const navigate = useNavigate();
-  console.log(isLoggedIn);
+  const loginStatus = localStorage.getItem('loginStatus');
 
   const handleLogout = () => {
-    onLogin(false);
     navigate('/', {replace: true});
+    localStorage.setItem('loginStatus',false);
   };
   return (
     <div className="header">
@@ -19,7 +18,7 @@ const Header = (prop) => {
       {/* Profile and logout button after authenticated that is conditional rendering */}
       <div className="header__action">
         {/* Logout & Profile button display based on user logged in that is if userLoggedIn = true then show logout and profile button */}
-        {isLoggedIn && (
+        {loginStatus === 'true' && (
           <>
             <button>Profile</button>
             <button onClick={handleLogout}>Logout</button>

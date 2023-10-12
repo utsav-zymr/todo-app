@@ -3,7 +3,7 @@ import "./Login.css";
 import data from "../../userData/users.json";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -11,9 +11,8 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     data.map((item) => {
       if (item.email === email && item.password === password) {
-        console.log("Login Success");
-        onLogin(true);
         navigate("/dashboard", { replace: true });
+        localStorage.setItem("loginStatus", true);
       }
     });
   };
