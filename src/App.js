@@ -4,6 +4,7 @@ import Login from "./components/login/Login";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProtectedRoute from "./components/utils/ProtectedRoute";
+import NewTodo from "./components/new-todo/NewTodo";
 
 function App() {
   return (
@@ -22,6 +23,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+        {/* Adding a new todo */}
+        <Route
+          path="/addTodo"
+          element={
+            <ProtectedRoute>
+              <NewTodo />
+            </ProtectedRoute>
+          }
+         />
       </Routes>
 
       {/* Button for Add new todo  */}

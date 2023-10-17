@@ -1,0 +1,65 @@
+.todo {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  background-color: antiquewhite;
+}
+.todo__item {
+  font-size: 14px;
+}
+.todo__actions {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.complete__button {
+  background-color: transparent;
+  border: none;
+  color: green;
+  cursor: pointer;
+  width: 50px;
+}
+
+.complete__button:hover {
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.1s;
+  opacity: 0.7;
+}
+.edit__button {
+  background-color: transparent;
+  border: none;
+  color: rgb(34, 130, 214);
+  cursor: pointer;
+  width: 50px;
+}
+
+.edit__button:hover {
+    color: #fff;
+    background-color: rgb(34, 130, 214);;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.1s;
+    opacity: 0.7;
+  }
+.delete__button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  width: 50px;
+}
+.delete__button:hover {
+  color: #fff;
+  background-color: red;
+  border-radius: 12px;
+  transition: all 0.1s;
+  opacity: 0.7;
+}

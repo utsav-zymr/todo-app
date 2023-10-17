@@ -13,6 +13,7 @@ const Login = () => {
       if (item.email === email && item.password === password) {
         navigate("/dashboard", { replace: true });
         localStorage.setItem("loginStatus", true);
+        localStorage.setItem("user", email);
       }
     });
   };
